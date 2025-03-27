@@ -1,0 +1,47 @@
+BONUS CHALLENGE FORM
+--------------------
+
+For each bonus challenge you have implemented, please replace the sentence "We are not entitled to this bonus."
+with a short description of:
+
+1. How it was implemented in your code
+2. Where it was used (in which class methods).
+3. How you tested that it is working correctly.
+
+--------------------
+
+1. Fully supporting all configuration fields and avoiding the use of magic numbers
+
+1. It was implemented in our code in a way that every time we needed to use one of the "magic numbers", we uses instead the env.config corresponding fields.
+2. Every time we avoided using the 'magic numbers" we wrote a note that says "//magic number" (in classes Dealer,Player and Table).
+3. We tested it working correctly by running the project and smooth and correct run of it, while writing the code without the "magic numbers".
+
+--------------------
+
+2. Terminating all threads (that you created) gracefully and in reverse order to the order they were created in.
+
+1. We implemented this by terminating the threads in reverse order according to the order they created.
+2. It was implemented in our code in a the "run()" and "Terminate()" functions in the Player and Dealer Classes.
+3. We tested it by printing a flag when the threads was created and terminated during the run of the program and we made sure that it was exactly the right reverse order.
+
+--------------------
+
+3. Handling the config.turnTimeoutMillis value as follows:
+config.turnTimeoutMillis < 0: display nothing.
+config.turnTimeoutMillis = 0: display a timer since the last action (reshuffle or set collected).
+Note: in modes without a countdown timer the dealer must ensure there is always at least one legal set on the table.
+
+We are not entitled to this bonus.
+1. We implemented it by making sure that in every time that the dealer opreates he makes sure that there is always at least 1 set available on the board
+2. It was implemented in "removeAllCardsFromTableNoSet()" in Dealer Class.
+3. We tested it by run the program with 4 AI players and the result that the game closed right when there was no sets available, and we didn't needed wait the env.config.TurnTimeoutSeconds.
+
+--------------------
+
+4. Making sure that the threads do not wake up unless some actual job needs to be done (e.g., a value needs to be
+changed on the display, key input needs to be handled, etc.) and the only threads created by you are:
+1 thread per player + 1 additional thread for non-human players.
+
+1. We implemented it by not creating any other threads other than 1 thread per player + 1 additional thread for non-human players.
+2. It was used in the "run()" functions in the Player and Dealer Classes
+3. We tested it by printing a flag when the threads was created and terminated during the run of the program and we made sure that there is not other threads than needed.
